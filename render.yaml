@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: edeneverywhere-cloud
+    runtime: docker
+    plan: starter
+    healthCheckPath: /
+    disk:
+      name: edendata
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: PORT
+        value: 8080
